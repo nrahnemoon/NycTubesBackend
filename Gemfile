@@ -45,4 +45,4 @@ end
 
 gem 'geocoder'
 
-gem 'dijkstra', :git => 'git@github.com:thinkphp/dijkstra.gem.git'
+gem 'dijkstra', :git => 'https://github.com/thinkphp/dijkstra.gem.git'

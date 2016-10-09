@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:thinkphp/dijkstra.gem.git
+  remote: https://github.com/thinkphp/dijkstra.gem.git
   revision: 78b3cca2b651fb54611b6e1654d2100f7de69fdc
   specs:
     dijkstra (0.1.0)
