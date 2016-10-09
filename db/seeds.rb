@@ -1,5 +1,11 @@
 require 'csv'
 
+Line.destroy_all
+ShortestPath.destroy_all
+StationEdge.destroy_all
+StationLine.destroy_all
+Station.destroy_all
+
 stationsCSVText = File.read(Rails.root.join('lib', 'assets', 'stations.csv'))
 
 stationsCSV = CSV.new(stationsCSVText)
@@ -76,7 +82,8 @@ Station.all.each { |station|
 
 Station.all.each { |from_station|
 	Station.all.each { |to_station|
-		if from_station.id != to_station.id
+		exists = ShortestPath.exists?(:from_station_id => from_station.id, :to_station_id => to_station.id)
+		if from_station.id != to_station.id && !exists
 
 			ob = Dijkstra.new(from_station.id, to_station.id, graph)
 
